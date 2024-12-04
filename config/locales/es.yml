@@ -1,0 +1,16 @@
+es:
+  activerecord:
+    errors:
+      models:
+        prompt:
+          attributes:
+            name:
+              blank: 'No puede estar vacio'
+            content:
+              blank: 'No puede estar vacio'
+          blank: 'El prompt no puede estar vacio'
+      messages:
+        blank: 'No puede estar en vacio'
+  helpers:
+    submit:
+      create: 'Crear %{model}'
