@@ -11,6 +11,9 @@ es:
           blank: 'El prompt no puede estar vacio'
       messages:
         blank: 'No puede estar en vacio'
+        too_short: 'No puede ser menor a %{count}'
+        too_long: 'No puede ser mayor a %{count}'
+        wrong_length: 'No puede ser %{count} caracteres'
   helpers:
     submit:
       create: 'Crear %{model}'
