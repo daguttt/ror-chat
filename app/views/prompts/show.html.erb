@@ -1,0 +1,22 @@
+<main class="container mx-auto p-4 main-min-h space-y-4">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+  <% if alert.present? %>
+    <p class="py-2 px-3 bg-red-50 mb-5 text-red-500 font-medium rounded-lg inline-block" id="alert"><%= alert %></p>
+  <% end %>
+
+  <h2 class="font-bold text-3xl"><%= @prompt.name %></h1>
+  <div class="card max-w-md bg-gray-100">
+    <div class="card-body">
+      <p><%= @prompt.content %></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <p>Response</p>
+    </div>
+  </div>
+
+  <%# <%= link_to "Back to posts", posts_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+</main>

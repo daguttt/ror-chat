@@ -1,0 +1,9 @@
+<% if model.errors[attribute].any? %>
+  <span class="label">
+    <span class="label-text-alt">
+      <% model.errors[attribute].each_with_index do |error, i| %>
+        <%= "#{error}#{i == model.errors[attribute].count - 1 ? "" : ". "}" %>
+      <% end %>
+    </span>
+  </span>
+<% end %>
