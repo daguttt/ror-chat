@@ -11,4 +11,14 @@
     <h2 class="font-bold text-4xl">Todos tus Prompts</h1>
     <%= link_to "Nuevo prompt", new_prompt_path, class: "btn btn-primary" %>
   </div>
+
+  <div id="prompts" class="min-w-full grid gap-6 md:grid-cols-2 mt-4">
+    <% if @prompts.any? %>
+      <% @prompts.each do |prompt| %>
+        <%= render "prompts/prompt_card", prompt: prompt %>
+      <% end %>
+    <% else %>
+      <p>No prompts yet...</p>
+    <% end %>
+  </div>
 </main>

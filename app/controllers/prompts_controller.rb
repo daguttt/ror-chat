@@ -15,6 +15,21 @@ class PromptsController < ApplicationController
   def create
     @prompt = Prompt.new(prompt_params)
 
+
+
+    if @prompt.processed_in_job
+      # Schedule the job to generate the response
+      # prompt_response = PromptsService.create_completion(name: @prompt.name, content: @prompt.content)
+      @prompt.build_response(status: :pending)
+    else
+      # TODO: Create and handle custom error when creating completion and set the status respectively
+      prompt_response = PromptsService.create_completion(name: @prompt.name, content: @prompt.content)
+      @prompt.build_response(
+        content: prompt_response,
+        status: :completed
+      )
+    end
+
     if @prompt.save
       redirect_to @prompt, notice: "Prompt creado con éxito."
     else
