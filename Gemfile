@@ -58,3 +58,5 @@ group :development do
 end
 
 gem "dotenv"
+
+gem "ruby-openai"
