@@ -14,7 +14,7 @@
     <%= form.text_field :name, class: tw_merge("input", prompt.errors[:name].any? ? 'is-invalid' : ''), placeholder: "Nombre del prompt" %>
     <% unless prompt.errors[:name].any? %>
       <span class="label">
-        <span class="label-text text-gray-500/80 dark:text-gray-300">(Opcional) Nombre con el que se guardará el prompt</span>
+        <span class="label-text text-gray-500/80 dark:text-gray-300">Nombre con el que se guardará el prompt</span>
       </span>
     <% else %>
       <%= form_errors(prompt, :name) %>
