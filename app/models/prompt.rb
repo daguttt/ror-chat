@@ -12,7 +12,7 @@ class Prompt < ApplicationRecord
   def modify_default_name
     return unless self.name == "Untitled"
 
-    prompts_untitled = self.class.where(name: "Untitled").count
-    self.name = "Untitled #{prompts_untitled}" if self.name == "Untitled"
+    prompts_untitled = self.class.where("name LIKE 'Untitled%'").count
+    self.name = "Untitled #{prompts_untitled + 1}" if self.name == "Untitled"
   end
 end
