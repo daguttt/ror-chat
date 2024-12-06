@@ -7,16 +7,23 @@
   <% end %>
 
   <h2 class="font-bold text-3xl"><%= @prompt.name %></h1>
-  <div class="card max-w-md bg-gray-100">
-    <div class="card-body">
-      <p><%= @prompt.content %></p>
+  <div>
+    <p><strong>Prompt:</strong></p>
+    <div class="card max-w-md bg-gray-100">
+      <div class="card-body">
+        <p><%= @prompt.content %></p>
+      </div>
     </div>
   </div>
-  <div class="card">
-    <div class="card-body prose">
-      <%= sanitize(@prompt.response.content) %>
+  <% if @prompt.response.completed? %>
+    <div class="card">
+      <div class="card-body prose">
+        <%= sanitize(@prompt.response.content) %>
+      </div>
     </div>
-  </div>
-
+  <% else %>
+    <p>La respuesta se estará disponible pronto...</p>
+    <%= link_to @prompt, "Recargar página" %>
+  <% end %>
   <%# <%= link_to "Back to posts", posts_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 </main>
