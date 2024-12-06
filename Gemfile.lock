@@ -222,6 +222,8 @@ GEM
     rake (13.2.1)
     rdoc (6.8.1)
       psych (>= 4.0.0)
+    redis-client (0.22.2)
+      connection_pool
     regexp_parser (2.9.3)
     reline (0.5.12)
       io-console (~> 0.5)
@@ -259,6 +261,11 @@ GEM
       faraday-multipart (>= 1)
     ruby-progressbar (1.13.0)
     securerandom (0.4.0)
+    sidekiq (7.3.6)
+      connection_pool (>= 2.3.0)
+      logger
+      rack (>= 2.2.4)
+      redis-client (>= 0.22.2)
     smart_properties (1.17.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
@@ -324,6 +331,7 @@ DEPENDENCIES
   rails (~> 7.2.2)
   rubocop-rails-omakase
   ruby-openai
+  sidekiq
   sprockets-rails
   stimulus-rails
   tailwind_merge (~> 0.13.3)

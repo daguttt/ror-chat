@@ -60,3 +60,5 @@ end
 gem "dotenv"
 
 gem "ruby-openai"
+
+gem "sidekiq"
