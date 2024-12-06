@@ -25,7 +25,7 @@ class PromptsController < ApplicationController
     if @prompt.processed_in_job
       # Schedule the job to generate the response
       email = prompt_params[:email]
-      ProcessPromptInBackgroundJob.perform_async(@prompt.id email)
+      ProcessPromptInBackgroundJob.perform_async(@prompt.id, email)
       @prompt.create_response(status: :pending)
     else
       # TODO: Create and handle custom error when creating completion and set the status respectively

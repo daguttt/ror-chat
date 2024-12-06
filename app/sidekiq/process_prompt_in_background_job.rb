@@ -9,6 +9,6 @@ class ProcessPromptInBackgroundJob
     prompt.response.attributes = { content: response, status: :completed }
     prompt.response.save
 
-    # TODO: Send notification email
+    PromptMailer.with(prompt: prompt, email: email).response_notification.deliver_now
   end
 end
