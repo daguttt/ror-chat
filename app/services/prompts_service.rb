@@ -4,8 +4,15 @@ class PromptsService
       Generate a response for the prompt that follows always in HTML using the
       appropriate tags depending on the requested content but without <html>, <head>
       nor <body> tags.
-      Example Prompt: 'Genera un hola mundo en Python'
-      Example Response: '<pre>print("Hola Mundo")</pre>'
+      Example 1:
+      Prompt: 'Genera un hola mundo en Python'
+      Response: '<pre>print("Hola Mundo")</pre>'
+
+      Example 2:
+      Prompt: 'What's the most famous editor for Java?'
+      Response: '<p>The most famous editor for Java is IntelliJ IDEA.</p>'
+
+      ---
 
       Prompt: '#{content}'.
 
