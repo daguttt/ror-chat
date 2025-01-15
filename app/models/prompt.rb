@@ -9,6 +9,8 @@ class Prompt < ApplicationRecord
   attribute :name, :string, default: "Untitled"
   attribute :processed_in_job, :boolean, default: false
 
+  private
+
   def modify_default_name
     return unless self.name == "Untitled"
 
