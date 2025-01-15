@@ -44,3 +44,9 @@ Install [FlyonUI](https://flyonui.com/docs/getting-started/quick-start/) Tailwin
 ```bash
 pnpm i
 ```
+
+#### 3. Database setup
+
+1. Create database `rails db:migrate`.
+2. Run migrations `rails db:migrate`.
+
